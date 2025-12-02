@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.mycompany.farmacia.controller.VerReservasClientesController"
+            style="-fx-background-color: #f4f7f6;">
+   
+   <BorderPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      
+      <top>
+         <!-- HEADER -->
+         <VBox BorderPane.alignment="CENTER">
+            <children>
+               <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="15.0" 
+                     style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 2 0;">
+                  <children>
+                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../../img/logo.jpg" />
+                        </image>
+                     </ImageView>
+                     <Text fill="#63b9aa" strokeType="OUTSIDE" strokeWidth="0.0" text="FARMA CENTER">
+                        <font>
+                           <Font name="System Bold" size="24.0" />
+                        </font>
+                     </Text>
+                     
+                     <HBox HBox.hgrow="ALWAYS" />
+                     
+                     <Label fx:id="lblEmpleado" text="Empleado: Admin" textFill="#4aa48e">
+                        <font>
+                           <Font size="14.0" />
+                        </font>
+                     </Label>
+                     <Button mnemonicParsing="false" onAction="#volverMenu" 
+                             style="-fx-background-color: #5bc0de; -fx-text-fill: white;" text="Volver">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Button>
+                  </children>
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding>
+               </HBox>
+            </children>
+         </VBox>
+      </top>
+      
+      <center>
+         <VBox spacing="20.0" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+            <padding>
+               <Insets top="30.0" bottom="30.0" left="40.0" right="40.0" />
+            </padding>
+            
+            <children>
+               <!-- TÍTULO -->
+               <VBox alignment="CENTER" spacing="5.0">
+                  <children>
+                     <Label text="Reservas de Clientes" textFill="#4aa48e">
+                        <font>
+                           <Font name="System Bold" size="28.0" />
+                        </font>
+                     </Label>
+                     <Label fx:id="lblSubtitulo" text="Gestiona las reservas de medicamentos de todos los clientes" textFill="#666666">
+                        <font>
+                           <Font size="14.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               
+               <!-- FILTROS Y BÚSQUEDA -->
+               <HBox spacing="15.0" alignment="CENTER_LEFT" 
+                     style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-border-width: 1; -fx-padding: 15;">
+                  <children>
+                     <Label text="Buscar:" textFill="#555555">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtBuscar" onKeyReleased="#buscarReserva" 
+                                prefHeight="35.0" prefWidth="250.0" 
+                                promptText="Buscar por cliente, medicamento o ticket..." 
+                                HBox.hgrow="ALWAYS"
+                                style="-fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5;">
+                        <font>
+                           <Font size="12.0" />
+                        </font>
+                     </TextField>
+                     
+                     <Label text="Estado:" textFill="#555555">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Label>
+                     <ComboBox fx:id="cmbFiltroEstado" onAction="#filtrarPorEstado" 
+                               prefHeight="35.0" prefWidth="150.0" 
+                               promptText="Todos" 
+                               style="-fx-background-radius: 5;" />
+                     
+                     <Label text="Prioridad:" textFill="#555555">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Label>
+                     <ComboBox fx:id="cmbFiltroPrioridad" onAction="#filtrarPorPrioridad" 
+                               prefHeight="35.0" prefWidth="120.0" 
+                               promptText="Todas" 
+                               style="-fx-background-radius: 5;" />
+                     
+                     <Button mnemonicParsing="false" onAction="#actualizarTabla" 
+                             prefHeight="35.0" 
+                             style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-background-radius: 5;" 
+                             text="🔄 Actualizar">
+                        <font>
+                           <Font name="System Bold" size="11.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+               
+               <!-- ESTADÍSTICAS -->
+               <HBox spacing="20.0" alignment="CENTER">
+                  <children>
+                     <VBox alignment="CENTER" spacing="5.0" 
+                           style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #5cb85c; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 15;" 
+                           prefWidth="140.0">
+                        <children>
+                           <Label text="Total" textFill="#555555">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="lblTotalReservas" text="0" textFill="#5cb85c">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                     
+                     <VBox alignment="CENTER" spacing="5.0" 
+                           style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #f0ad4e; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 15;" 
+                           prefWidth="140.0">
+                        <children>
+                           <Label text="Pendientes" textFill="#555555">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="lblPendientes" text="0" textFill="#f0ad4e">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                     
+                     <VBox alignment="CENTER" spacing="5.0" 
+                           style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #5bc0de; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 15;" 
+                           prefWidth="140.0">
+                        <children>
+                           <Label text="Entregadas" textFill="#555555">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="lblEntregadas" text="0" textFill="#5bc0de">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                     
+                     <VBox alignment="CENTER" spacing="5.0" 
+                           style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #d9534f; -fx-border-radius: 10; -fx-border-width: 2; -fx-padding: 15;" 
+                           prefWidth="140.0">
+                        <children>
+                           <Label text="Prioritarias" textFill="#555555">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="lblPrioritarias" text="0" textFill="#d9534f">
+                              <font>
+                                 <Font name="System Bold" size="24.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </HBox>
+               
+               <!-- TABLA DE RESERVAS -->
+               <VBox VBox.vgrow="ALWAYS" 
+                     style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <padding>
+                     <Insets top="15.0" bottom="15.0" left="15.0" right="15.0" />
+                  </padding>
+                  <children>
+                     <TableView fx:id="tablaReservas" VBox.vgrow="ALWAYS">
+                        <columns>
+                           <TableColumn fx:id="colTicket" prefWidth="80.0" text="Ticket" />
+                           <TableColumn fx:id="colCliente" prefWidth="150.0" text="Cliente" />
+                           <TableColumn fx:id="colCedula" prefWidth="100.0" text="Cédula" />
+                           <TableColumn fx:id="colMedicamento" prefWidth="180.0" text="Medicamento" />
+                           <TableColumn fx:id="colCantidad" prefWidth="80.0" text="Cantidad" />
+                           <TableColumn fx:id="colFecha" prefWidth="130.0" text="Fecha" />
+                           <TableColumn fx:id="colPrioridad" prefWidth="90.0" text="Prioridad" />
+                           <TableColumn fx:id="colEstado" prefWidth="100.0" text="Estado" />
+                        </columns>
+                     </TableView>
+                     
+                     <!-- MENSAJE SI NO HAY RESERVAS -->
+                     <VBox fx:id="panelSinReservas" alignment="CENTER" spacing="10.0" 
+                           managed="false" visible="false" prefHeight="300.0">
+                        <children>
+                           <Label text="📋" textFill="#cccccc">
+                              <font>
+                                 <Font size="48.0" />
+                              </font>
+                           </Label>
+                           <Label text="No hay reservas registradas" textFill="#999999">
+                              <font>
+                                 <Font name="System Bold" size="16.0" />
+                              </font>
+                           </Label>
+                           <Label text="Las reservas de los clientes aparecerán aquí" textFill="#999999">
+                              <font>
+                                 <Font size="12.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+               
+               <!-- BOTONES DE ACCIÓN -->
+               <HBox spacing="15.0" alignment="CENTER">
+                  <children>
+                     <Button fx:id="btnVerDetalle" mnemonicParsing="false" onAction="#verDetalleReserva" 
+                             disable="true" prefHeight="40.0" prefWidth="180.0"
+                             style="-fx-background-color: #5bc0de; -fx-background-radius: 8; -fx-text-fill: white;" 
+                             text="👁 Ver Detalle">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font>
+                     </Button>
+                     
+                     <Button fx:id="btnMarcarEntregado" mnemonicParsing="false" onAction="#marcarComoEntregado" 
+                             disable="true" prefHeight="40.0" prefWidth="200.0"
+                             style="-fx-background-color: #5cb85c; -fx-background-radius: 8; -fx-text-fill: white;" 
+                             text="✓ Marcar como Entregado">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font>
+                     </Button>
+                     
+                     <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelarReserva" 
+                             disable="true" prefHeight="40.0" prefWidth="180.0"
+                             style="-fx-background-color: #d9534f; -fx-background-radius: 8; -fx-text-fill: white;" 
+                             text="❌ Cancelar Reserva">
+                        <font>
+                           <Font name="System Bold" size="13.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+      </center>
+   </BorderPane>
+</AnchorPane>

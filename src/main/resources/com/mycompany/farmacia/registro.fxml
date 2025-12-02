@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- Controlador que debe ser creado: com.mycompany.farmacia.controller.RegistroController -->
+
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.farmacia.controller.RegistroController">
+    <content>
+        <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="693.0" prefWidth="484.0" spacing="15.0" style="-fx-background-color: #f4f7f6;">
+            <children>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <!-- Usando tu ruta de imagen -->
+                        <ImageView fitHeight="53.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../img/logo.jpg" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#63b9aa" nodeOrientation="RIGHT_TO_LEFT" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="FARMA CENTER" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                        </Text>
+                    </children>
+                    <padding>
+                        <Insets top="25.0" />
+                    </padding>
+                </HBox>
+                
+                <Label text="Registro de Usuario" textFill="#4aa48e">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                
+                <!-- 1. SELECTOR TIPO DE USUARIO -->
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label text="Tipo de Registro:" />
+                        <ComboBox fx:id="cmbTipoUsuario" onAction="#cambiarTipoRegistro" prefWidth="280.0" promptText="Seleccionar tipo..." />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                
+                <!-- Mensaje de error/éxito (usado por el controlador) -->
+                <Text fx:id="lblMensaje" fill="#d9534f" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="400.0">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Text>
+                
+                <!-- 2. Formulario de registro (GridPane) -->
+                <GridPane fx:id="gridFormulario" hgap="10.0" prefWidth="440.0" vgap="12.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="290.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 0: Cédula -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 1: Nombre -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 2: Email -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 3: Teléfono -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 4: Dirección -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 5: Dato Adicional (EPS / Cargo) -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 6: Contraseña -->
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> <!-- 7: Confirmar Contraseña -->
+                        <!-- Fila 8 (Usuario) ELIMINADA -->
+                    </rowConstraints>
+                    <children>
+                        <!-- Etiquetas (Columna 0) -->
+                        <Label text="Cédula:" />
+                        <Label text="Nombre Completo:" GridPane.rowIndex="1" />
+                        <Label text="Email:" GridPane.rowIndex="2" />
+                        <Label text="Teléfono:" GridPane.rowIndex="3" />
+                        <Label text="Dirección:" GridPane.rowIndex="4" />
+                        <!-- Etiqueta que cambia: labDatoAdicional -->
+                        <Label fx:id="lblDatoAdicional" text="Nombre de EPS:" GridPane.rowIndex="5" /> 
+                        <Label text="Contraseña:" GridPane.rowIndex="6" />
+                        <Label text="Confirmar Contraseña:" GridPane.rowIndex="7" />
+                        
+                        <!-- Campos de Input (Columna 1) -->
+                        <TextField fx:id="txtCedula" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtDireccion" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <!-- Campo Dinámico: txtDatoAdicional -->
+                        <TextField fx:id="txtDatoAdicional" GridPane.columnIndex="1" GridPane.rowIndex="5" /> 
+                        <!-- Fila 6 original (Usuario) ELIMINADA -->
+                        <PasswordField fx:id="txtPassword" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <PasswordField fx:id="txtConfirmPassword" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    </children>
+                    <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="3.0" />
+                    </VBox.margin>
+                </GridPane>
+                
+                <!-- 3. Botón de Registro -->
+                <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #4aa48e; -fx-background-radius: 5;" text="REGISTRARSE" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                
+                <!-- 4. Link para volver al Login -->
+                <Hyperlink fx:id="linkVolver" onAction="#volverLogin" text="&lt; Volver al inicio de sesión" textFill="#27c691">
+                    <VBox.margin>
+                        <Insets bottom="30.0" top="10.0" />
+                    </VBox.margin>
+                </Hyperlink>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

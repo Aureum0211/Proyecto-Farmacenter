@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.mycompany.farmacia.controller.ReservarController"
+            style="-fx-background-color: #f4f7f6;">
+   
+   <BorderPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      
+      <top>
+         <!-- HEADER -->
+         <VBox BorderPane.alignment="CENTER">
+            <children>
+               <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="15.0" 
+                     style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 2 0;">
+                  <children>
+                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../../img/logo.jpg" />
+                        </image>
+                     </ImageView>
+                     <Text fill="#63b9aa" strokeType="OUTSIDE" strokeWidth="0.0" text="FARMA CENTER">
+                        <font>
+                           <Font name="System Bold" size="24.0" />
+                        </font>
+                     </Text>
+                     
+                     <HBox HBox.hgrow="ALWAYS" />
+                     
+                     <Label fx:id="lblUsuario" text="Usuario: Cliente" textFill="#4aa48e">
+                        <font>
+                           <Font size="14.0" />
+                        </font>
+                     </Label>
+                     <Button mnemonicParsing="false" onAction="#volverMenu" 
+                             style="-fx-background-color: #5bc0de; -fx-text-fill: white;" text="Volver">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Button>
+                  </children>
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding>
+               </HBox>
+            </children>
+         </VBox>
+      </top>
+      
+      <center>
+         <HBox spacing="20.0" alignment="CENTER" BorderPane.alignment="CENTER">
+            <padding>
+               <Insets top="20.0" bottom="20.0" left="30.0" right="30.0" />
+            </padding>
+            
+            <children>
+               <!-- PANEL IZQUIERDO: LISTA DE MEDICAMENTOS -->
+               <VBox spacing="10.0" prefWidth="550.0" HBox.hgrow="ALWAYS">
+                  <children>
+                     <Label text="Seleccione el Medicamento a Reservar" textFill="#4aa48e">
+                        <font>
+                           <Font name="System Bold" size="16.0" />
+                        </font>
+                     </Label>
+                     
+                     <!-- Barra de búsqueda -->
+                     <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <children>
+                           <TextField fx:id="txtBuscar" onKeyReleased="#buscarMedicamento" 
+                                      prefHeight="35.0" prefWidth="300.0" 
+                                      promptText="Buscar medicamento..." 
+                                      HBox.hgrow="ALWAYS"
+                                      style="-fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5;">
+                              <font>
+                                 <Font size="12.0" />
+                              </font>
+                           </TextField>
+                           
+                           <ComboBox fx:id="cmbFiltroOrden" onAction="#filtrarPorOrden" 
+                                     prefHeight="35.0" prefWidth="180.0" 
+                                     promptText="Todos" 
+                                     style="-fx-background-radius: 5;" />
+                        </children>
+                     </HBox>
+                     
+                     <!-- Tabla de medicamentos -->
+                     <TableView fx:id="tablaMedicamentos" VBox.vgrow="ALWAYS"
+                                style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-radius: 5;">
+                        <columns>
+                           <TableColumn fx:id="colNombre" prefWidth="200.0" text="Nombre" />
+                           <TableColumn fx:id="colTipo" prefWidth="130.0" text="Tipo" />
+                           <TableColumn fx:id="colStock" prefWidth="80.0" text="Stock" />
+                           <TableColumn fx:id="colOrden" prefWidth="139.0" text="Req. Orden" />
+                        </columns>
+                     </TableView>
+                  </children>
+               </VBox>
+               
+               <!-- PANEL DERECHO: FORMULARIO DE RESERVA -->
+               <VBox spacing="15.0" prefWidth="420.0" maxWidth="450.0"
+                     style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <children>
+                     <Label text="Datos de la Reserva" textFill="#4aa48e">
+                        <font>
+                           <Font name="System Bold" size="18.0" />
+                        </font>
+                     </Label>
+                     
+                     <!-- Información del medicamento seleccionado -->
+                     <VBox spacing="8.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 5; -fx-padding: 10;">
+                        <children>
+                           <Label text="Medicamento Seleccionado:" textFill="#555555">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="lblMedicamentoSeleccionado" text="Ninguno" wrapText="true">
+                              <font>
+                                 <Font size="13.0" />
+                              </font>
+                           </Label>
+                           
+                           <Label text="Stock Disponible:" textFill="#555555">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                              <VBox.margin>
+                                 <Insets top="5.0" />
+                              </VBox.margin>
+                           </Label>
+                           <Label fx:id="lblStockDisponible" text="-">
+                              <font>
+                                 <Font size="13.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                     
+                     <!-- Formulario de reserva -->
+                     <GridPane hgap="10.0" vgap="12.0">
+                        <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="120.0" prefWidth="120.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                           <Label text="Cantidad:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                           <Spinner fx:id="spinnerCantidad" editable="true" prefWidth="150.0" 
+                                    GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                           
+                           <Label text="Prioridad:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                           <CheckBox fx:id="chkPrioridad" text="Persona Prioritaria" 
+                                     GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </CheckBox>
+                        </children>
+                     </GridPane>
+                     
+                     <!-- Panel de Orden Médica (se muestra solo si el medicamento lo requiere) -->
+                     <VBox fx:id="panelOrdenMedica" spacing="10.0" managed="false" visible="false"
+                           style="-fx-background-color: #fff3cd; -fx-background-radius: 5; -fx-padding: 10; -fx-border-color: #ffc107; -fx-border-radius: 5;">
+                        <children>
+                           <Label text="⚠️ Este medicamento requiere orden médica" textFill="#856404" wrapText="true">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                           
+                           <GridPane hgap="10.0" vgap="10.0">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <Label text="Código Médico:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="txtCodigoMedico" GridPane.columnIndex="1" GridPane.rowIndex="0" 
+                                            promptText="Ej: MED12345" />
+                                 
+                                 <Label text="Entidad:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="txtEntidad" GridPane.columnIndex="1" GridPane.rowIndex="1" 
+                                            promptText="Ej: Hospital Central" />
+                              </children>
+                           </GridPane>
+                        </children>
+                     </VBox>
+                     
+                     <!-- Mensaje de estado -->
+                     <Label fx:id="lblMensaje" text="" wrapText="true" textFill="#d9534f">
+                        <font>
+                           <Font size="12.0" />
+                        </font>
+                     </Label>
+                     
+                     <!-- Botón de reservar -->
+                     <Button fx:id="btnReservar" mnemonicParsing="false" onAction="#realizarReserva" 
+                             disable="true" maxWidth="Infinity" prefHeight="45.0" 
+                             style="-fx-background-color: #5cb85c; -fx-background-radius: 8; -fx-text-fill: white;" 
+                             text="CONFIRMAR RESERVA">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+      </center>
+   </BorderPane>
+</AnchorPane>

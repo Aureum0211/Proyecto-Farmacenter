@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.mycompany.farmacia.controller.PerfilController"
+            style="-fx-background-color: #f4f7f6;">
+   
+   <BorderPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      
+      <top>
+         <!-- HEADER -->
+         <HBox alignment="CENTER_LEFT" prefHeight="70.0" spacing="15.0" 
+               style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 2 0;"
+               BorderPane.alignment="CENTER">
+            <padding>
+               <Insets left="20.0" right="20.0" />
+            </padding>
+            <children>
+               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../img/logo.jpg" />
+                  </image>
+               </ImageView>
+               <Text fill="#63b9aa" strokeType="OUTSIDE" strokeWidth="0.0" text="FARMA CENTER">
+                  <font>
+                     <Font name="System Bold" size="24.0" />
+                  </font>
+               </Text>
+               
+               <HBox HBox.hgrow="ALWAYS" />
+               
+               <Label text="Mi Perfil" textFill="#4aa48e">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               
+               <Button mnemonicParsing="false" onAction="#volverMenu" 
+                       style="-fx-background-color: #5bc0de; -fx-text-fill: white;" text="Volver al Menú">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+      </top>
+      
+      <center>
+         <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+            <content>
+               <VBox spacing="20.0" alignment="TOP_CENTER">
+                  <padding>
+                     <Insets top="30.0" bottom="30.0" left="50.0" right="50.0" />
+                  </padding>
+                  
+                  <children>
+                     <!-- PANEL DE INFORMACIÓN PERSONAL -->
+                     <VBox spacing="15.0" maxWidth="800.0" 
+                           style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-border-width: 1;">
+                        <padding>
+                           <Insets top="25.0" bottom="25.0" left="30.0" right="30.0" />
+                        </padding>
+                        <children>
+                           <HBox alignment="CENTER_LEFT" spacing="15.0">
+                              <children>
+                                 <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../img/bienbeLogin.png" />
+                                    </image>
+                                 </ImageView>
+                                 
+                                 <VBox spacing="5.0">
+                                    <children>
+                                       <Label fx:id="lblNombreCompleto" text="Nombre Completo" textFill="#4aa48e">
+                                          <font>
+                                             <Font name="System Bold" size="22.0" />
+                                          </font>
+                                       </Label>
+                                       <Label text="Cliente Registrado">
+                                          <font>
+                                             <Font size="13.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                                 
+                                 <HBox HBox.hgrow="ALWAYS" />
+                                 
+                                 <Button mnemonicParsing="false" onAction="#editarPerfil" 
+                                         prefHeight="35.0" prefWidth="150.0"
+                                         style="-fx-background-color: #f0ad4e; -fx-background-radius: 5; -fx-text-fill: white;" 
+                                         text="✏️ Editar Perfil">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           
+                           <Separator />
+                           
+                           <Label text="Información Personal" textFill="#555555">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font>
+                           </Label>
+                           
+                           <GridPane hgap="20.0" vgap="15.0">
+                              <columnConstraints>
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                 <Label text="Cédula:" textFill="#666666" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="lblCedula" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                 </Label>
+                                 
+                                 <Label text="EPS:" textFill="#666666" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="lblEps" text="-" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </GridPane>
+                        </children>
+                     </VBox>
+                     
+                     <!-- PANEL DE ESTADÍSTICAS -->
+                     <HBox spacing="20.0" maxWidth="800.0" alignment="CENTER">
+                        <children>
+                           <!-- Card 1: Total Reservas -->
+                           <VBox spacing="10.0" alignment="CENTER" HBox.hgrow="ALWAYS"
+                                 style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #5cb85c; -fx-border-radius: 10; -fx-border-width: 2;">
+                              <padding>
+                                 <Insets top="20.0" bottom="20.0" left="20.0" right="20.0" />
+                              </padding>
+                              <children>
+                                 <Label text="📋" style="-fx-font-size: 30px;" />
+                                 <Label fx:id="lblTotalReservas" text="0" textFill="#5cb85c">
+                                    <font>
+                                       <Font name="System Bold" size="28.0" />
+                                    </font>
+                                 </Label>
+                                 <Label text="Total de Reservas" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </VBox>
+                           
+                           <!-- Card 2: Medicamentos Diferentes -->
+                           <VBox spacing="10.0" alignment="CENTER" HBox.hgrow="ALWAYS"
+                                 style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #5bc0de; -fx-border-radius: 10; -fx-border-width: 2;">
+                              <padding>
+                                 <Insets top="20.0" bottom="20.0" left="20.0" right="20.0" />
+                              </padding>
+                              <children>
+                                 <Label text="💊" style="-fx-font-size: 30px;" />
+                                 <Label fx:id="lblMedicamentosReservados" text="0" textFill="#5bc0de">
+                                    <font>
+                                       <Font name="System Bold" size="28.0" />
+                                    </font>
+                                 </Label>
+                                 <Label text="Medicamentos Diferentes" textAlignment="CENTER" wrapText="true">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </VBox>
+                           
+                           <!-- Card 3: Última Reserva -->
+                           <VBox spacing="10.0" alignment="CENTER" HBox.hgrow="ALWAYS"
+                                 style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #f0ad4e; -fx-border-radius: 10; -fx-border-width: 2;">
+                              <padding>
+                                 <Insets top="20.0" bottom="20.0" left="20.0" right="20.0" />
+                              </padding>
+                              <children>
+                                 <Label text="📅" style="-fx-font-size: 30px;" />
+                                 <Label fx:id="lblUltimaReserva" text="-" textFill="#f0ad4e" wrapText="true" textAlignment="CENTER">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Label>
+                                 <Label text="Última Reserva" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                     
+                     <!-- PANEL DE HISTORIAL DE RESERVAS -->
+                     <VBox spacing="15.0" maxWidth="800.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-border-width: 1;">
+                        <padding>
+                           <Insets top="25.0" bottom="25.0" left="30.0" right="30.0" />
+                        </padding>
+                        <children>
+                           <HBox alignment="CENTER_LEFT" spacing="10.0">
+                              <children>
+                                 <Label text="📜 Historial de Reservas" textFill="#4aa48e">
+                                    <font>
+                                       <Font name="System Bold" size="16.0" />
+                                    </font>
+                                 </Label>
+                                 
+                                 <HBox HBox.hgrow="ALWAYS" />
+                                 
+                                 <Button mnemonicParsing="false" onAction="#actualizarHistorial"
+                                         style="-fx-background-color: #5bc0de; -fx-background-radius: 5; -fx-text-fill: white;" 
+                                         text="🔄 Actualizar">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           
+                           <TableView fx:id="tablaHistorial" prefHeight="300.0"
+                                      style="-fx-background-color: white; -fx-border-color: #e0e0e0;">
+                              <columns>
+                                 <TableColumn fx:id="colFecha" prefWidth="150.0" text="Fecha y Hora" />
+                                 <TableColumn fx:id="colMedicamento" prefWidth="220.0" text="Medicamento" />
+                                 <TableColumn fx:id="colCantidad" prefWidth="100.0" text="Cantidad" />
+                                 <TableColumn fx:id="colPrioridad" prefWidth="100.0" text="Prioridad" />
+                              </columns>
+                           </TableView>
+                           
+                           <Label fx:id="lblMensajeHistorial" text="" textFill="#666666" wrapText="true">
+                              <font>
+                                 <Font size="11.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+            </content>
+         </ScrollPane>
+      </center>
+   </BorderPane>
+</AnchorPane>

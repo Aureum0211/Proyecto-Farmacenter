@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.farmacia.controller.MenuClienteController">
+   <top>
+      <!-- HEADER -->
+      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="800.0" spacing="15.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 2 0;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#63b9aa" strokeType="OUTSIDE" strokeWidth="0.0" text="FARMA CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblUsuario" prefHeight="20.0" prefWidth="106.0" text="Usuario: Cliente" textAlignment="RIGHT" textFill="#4aa48e">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="350.0" />
+               </HBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #d9534f; -fx-text-fill: white;" text="Salir" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <!-- MENÚ PRINCIPAL -->
+      <VBox alignment="TOP_CENTER" prefHeight="520.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Menú Principal - Cliente" textFill="#4aa48e">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Label>
+            
+            <VBox alignment="CENTER" prefHeight="350.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <!-- Botón Consultar Medicamentos -->
+                  <Button mnemonicParsing="false" onAction="#consultarMedicamentos" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: #4aa48e; -fx-background-radius: 10;" text="🔍 Consultar Medicamentos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  
+                  <!-- Botón Reservar Medicamento -->
+                  <Button mnemonicParsing="false" onAction="#reservarMedicamento" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: #5cb85c; -fx-background-radius: 10;" text="📋 Reservar Medicamento" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  
+                  <!-- Botón Ver Mis Reservas -->
+                  <Button mnemonicParsing="false" onAction="#verMisReservas" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: #5bc0de; -fx-background-radius: 10;" text="🎫 Ver Mis Reservas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  
+                  <!-- Botón Mi Perfil -->
+                  <Button mnemonicParsing="false" onAction="#verPerfil" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: #f0ad4e; -fx-background-radius: 10;" text="👤 Mi Perfil" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.farmacia.controller.LoginController">
+   <children>
+      <!-- HEADER CON LOGO -->
+      <HBox opacity="0.95" prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="47.0" fitWidth="51.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo.jpg" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" top="6.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextFlow nodeOrientation="RIGHT_TO_LEFT" prefHeight="60.0" prefWidth="229.0" textAlignment="CENTER">
+               <children>
+                  <Text fill="#63b9aa" nodeOrientation="RIGHT_TO_LEFT" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="FARMA CENTER">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </TextFlow>
+         </children>
+         <effect>
+            <ColorAdjust brightness="-0.05" contrast="0.02" hue="0.05" />
+         </effect>
+      </HBox>
+      
+      <!-- CONTENEDOR CENTRADO DEL LOGIN -->
+      <StackPane layoutX="212.0" prefHeight="540.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="214.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="540.0" prefWidth="454.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+               </padding>
+               <children>
+                  <!-- IMAGEN Y BIENVENIDA -->
+                  <ImageView fx:id="imgPersona" fitHeight="120.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/bienbeLogin.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="bienvenido" fill="#4aa48e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENIDO" textAlignment="CENTER" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <StackPane prefHeight="125.0" prefWidth="338.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="300.0" />
+                              <VBox prefHeight="135.0" prefWidth="420.0">
+                                 <children>
+                                    
+                                                <!-- CAMPO CÉDULA -->
+                                    <TextField fx:id="txtCedula" alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="659.0" promptText="CÉDULA" style="-fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1.5; -fx-padding: 8 12;">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    
+                                                <!-- CAMPO CONTRASEÑA -->
+                                    <PasswordField fx:id="txtContraseña" alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="260.0" promptText="CONTRASEÑA" style="-fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1.5; -fx-padding: 8 12;">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </PasswordField>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="200.0" right="200.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="300.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  
+                        <!-- COMBOBOX TIPO USUARIO -->
+                  <ComboBox fx:id="comboTipo" prefHeight="38.0" prefWidth="260.0" promptText="Tipo de usuario" style="-fx-background-radius: 5;">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  
+                        <!-- BOTONES -->
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="260.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #4aa48e; -fx-background-radius: 5;" text="INICIAR SESIÓN" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #e0e0e0; -fx-background-radius: 5;" text="CANCELAR">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  
+                        <!-- LINKS -->
+                  <Hyperlink fx:id="linkRegistrar" alignment="CENTER" onAction="#irARegistro" text="¿No tiene cuenta? Registrar" textFill="#27c691">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+                  <Hyperlink fx:id="linkOlvidoContraseña" alignment="CENTER" text="¿Olvidó su contraseña?" textFill="#23bf8b">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

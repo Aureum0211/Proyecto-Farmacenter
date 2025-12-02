@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" style="-fx-background-color: #f4f7f6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.farmacia.controller.GestionarMedicamentosController">
+   <top>
+      <!-- HEADER -->
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="1200.0" spacing="15.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 2 0;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#63b9aa" strokeType="OUTSIDE" strokeWidth="0.0" text="FARMA CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Label text="Gestión de Medicamentos" textFill="#d9534f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="lblEmpleado" text="Empleado: Admin" textFill="#4aa48e">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="450.0" />
+               </HBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#volverMenu" style="-fx-background-color: #5bc0de; -fx-text-fill: white;" text="Volver">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <HBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="1200.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <!-- PANEL IZQUIERDO: TABLA Y CONTROLES -->
+            <VBox prefHeight="680.0" prefWidth="650.0" spacing="12.0">
+               <children>
+                  <!-- Barra de búsqueda -->
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="10.0">
+                     <children>
+                        <Label text="Buscar:" textFill="#4aa48e">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBuscar" onKeyReleased="#buscarMedicamento" prefHeight="35.0" prefWidth="350.0" promptText="Nombre del medicamento..." style="-fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#limpiarBusqueda" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #f0ad4e; -fx-background-radius: 5; -fx-text-fill: white;" text="Limpiar">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  
+                  <!-- Tabla de medicamentos -->
+                  <TableView fx:id="tablaMedicamentos" prefHeight="520.0" prefWidth="650.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-radius: 5;">
+                     <columns>
+                        <TableColumn fx:id="colNombre" prefWidth="180.0" text="Nombre" />
+                        <TableColumn fx:id="colTipo" prefWidth="120.0" text="Tipo" />
+                        <TableColumn fx:id="colComercial" prefWidth="150.0" text="Nombre Comercial" />
+                        <TableColumn fx:id="colStock" prefWidth="80.0" text="Stock" />
+                        <TableColumn fx:id="colOrden" prefWidth="119.0" text="Req. Orden" />
+                     </columns>
+                  </TableView>
+                  
+                  <!-- Botones de acción -->
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="12.0">
+                     <children>
+                        <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevoMedicamento" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #5cb85c; -fx-background-radius: 5; -fx-text-fill: white;" text="➕ Nuevo">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editarMedicamento" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #f0ad4e; -fx-background-radius: 5; -fx-text-fill: white;" text="✏️ Editar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarMedicamento" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #d9534f; -fx-background-radius: 5; -fx-text-fill: white;" text="🗑️ Eliminar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="lblMensaje" text="" textFill="#5cb85c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" top="15.0" />
+               </HBox.margin>
+            </VBox>
+            
+            <!-- PANEL DERECHO: FORMULARIO -->
+            <ScrollPane fitToWidth="true" prefHeight="680.0" prefWidth="515.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-radius: 10; -fx-border-width: 1;">
+               <content>
+                  <VBox prefWidth="495.0" spacing="10.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lblTituloForm" text="Agregar Nuevo Medicamento" textFill="#4aa48e">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        
+                        <!-- Nombre -->
+                        <Label text="Nombre del Medicamento:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNombre" promptText="Ej: Paracetamol" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        
+                        <!-- Tipo -->
+                        <Label text="Tipo:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbTipo" editable="true" prefWidth="455.0" promptText="Seleccione o escriba el tipo" style="-fx-border-color: #cccccc; -fx-border-radius: 5;" />
+                        
+                        <!-- Nombre Comercial -->
+                        <Label text="Nombre Comercial:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtNombreComercial" promptText="Ej: Acetaminofen MK" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        
+                        <!-- Nombre Genérico -->
+                        <Label text="Nombre Genérico:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtNombreGenerico" promptText="Ej: Acetaminofén" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        
+                        <!-- Dosis -->
+                        <Label text="Dosis:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtDosis" promptText="Ej: 500mg" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        
+                        <!-- Forma Farmacéutica -->
+                        <Label text="Forma Farmacéutica:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtForma" promptText="Ej: Tabletas" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        
+                        <!-- Frecuencia y Duración -->
+                        <Label text="Frecuencia y Duración:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtFrecuencia" promptText="Ej: Cada 8 horas por 5 días" style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        
+                        <!-- Indicaciones -->
+                        <Label text="Indicaciones:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextArea fx:id="txtIndicaciones" prefHeight="70.0" prefWidth="455.0" promptText="Indicaciones de uso..." style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;" wrapText="true">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextArea>
+                        
+                        <!-- Advertencias -->
+                        <Label text="Advertencias:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="txtAdvertencias" prefHeight="70.0" prefWidth="455.0" promptText="Advertencias y precauciones..." style="-fx-border-color: #cccccc; -fx-border-radius: 5; -fx-border-width: 1;" wrapText="true">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextArea>
+                        
+                        <!-- Requiere Orden Médica -->
+                        <CheckBox fx:id="chkRequiereOrden" text="Requiere Orden Médica">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        
+                        <!-- Cantidad Disponible -->
+                        <Label text="Cantidad Disponible:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Spinner fx:id="spnCantidad" editable="true" prefWidth="150.0" />
+                        
+                        <!-- Botones del formulario -->
+                        <HBox alignment="CENTER" prefHeight="60.0" spacing="15.0">
+                           <children>
+                              <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarMedicamento" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #4aa48e; -fx-background-radius: 5; -fx-text-fill: white;" text="💾 Guardar">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#limpiarFormulario" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #e0e0e0; -fx-background-radius: 5;" text="🔄 Limpiar">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+               <HBox.margin>
+                  <Insets right="20.0" top="15.0" />
+               </HBox.margin>
+            </ScrollPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
