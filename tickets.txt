@@ -1,0 +1,183 @@
+-------------------------------
+Ticket:
+Usuario: 1234 | Cédula: lili
+Medicamento: Ketorolaco | Cantidad: 2
+Prioridad: No
+Fecha y hora: 2025/11/23 17:48:53
+-------------------------------
+-------------------------------
+Ticket:
+Usuario: josue gil | Cédula: 12345
+Medicamento: Acetaminofén | Cantidad: 2
+Prioridad: No
+Fecha y hora: 2025/12/02 00:12:09
+-------------------------------
+=======================================
+           TICKET DE RESERVA           
+             FARMA CENTER              
+=======================================
+
+Número de Ticket: #001
+Fecha y Hora: 2025/12/02 00:24:10
+
+---------------------------------------
+DATOS DEL CLIENTE:
+---------------------------------------
+  Nombre: josue gil
+  Cédula: 12345
+
+---------------------------------------
+DATOS DEL MEDICAMENTO:
+---------------------------------------
+  Medicamento: Acetaminofén
+  Nombre Comercial: Tempra, Dolex
+  Cantidad Reservada: 1 unidad(es)
+  Requiere Orden: No
+
+---------------------------------------
+DETALLES DE LA RESERVA:
+---------------------------------------
+  Prioridad: SÍ - Atención Prioritaria
+
+=======================================
+  Por favor conserve este ticket para
+  retirar su medicamento en farmacia
+=======================================
+
+
+=======================================
+           TICKET DE RESERVA           
+             FARMA CENTER              
+=======================================
+
+Número de Ticket: #001
+Fecha y Hora: 2025/12/02 00:41:07
+
+---------------------------------------
+DATOS DEL CLIENTE:
+---------------------------------------
+  Nombre: josue gil
+  Cédula: 12345
+
+---------------------------------------
+DATOS DEL MEDICAMENTO:
+---------------------------------------
+  Medicamento: Amoxicilina
+  Nombre Comercial: Amoxil
+  Cantidad Reservada: 1 unidad(es)
+  Requiere Orden: Sí
+
+---------------------------------------
+DETALLES DE LA RESERVA:
+---------------------------------------
+  Prioridad: No
+  Estado: PENDIENTE
+
+=======================================
+  Por favor conserve este ticket para
+  retirar su medicamento en farmacia
+=======================================
+
+
+=======================================
+           TICKET DE RESERVA           
+             FARMA CENTER              
+=======================================
+
+Número de Ticket: #001
+Fecha y Hora: 2025/12/02 00:44:22
+
+---------------------------------------
+DATOS DEL CLIENTE:
+---------------------------------------
+  Nombre: josue gil
+  Cédula: 12345
+
+---------------------------------------
+DATOS DEL MEDICAMENTO:
+---------------------------------------
+  Medicamento: Paracetamol
+  Nombre Comercial: Tylenol
+  Cantidad Reservada: 1 unidad(es)
+  Requiere Orden: No
+
+---------------------------------------
+DETALLES DE LA RESERVA:
+---------------------------------------
+  Prioridad: No
+  Estado: PENDIENTE
+
+=======================================
+  Por favor conserve este ticket para
+  retirar su medicamento en farmacia
+=======================================
+
+
+=======================================
+           TICKET DE RESERVA           
+             FARMA CENTER              
+=======================================
+
+Número de Ticket: #001
+Fecha y Hora: 2025/12/02 00:46:50
+
+---------------------------------------
+DATOS DEL CLIENTE:
+---------------------------------------
+  Nombre: josue gil
+  Cédula: 12345
+
+---------------------------------------
+DATOS DEL MEDICAMENTO:
+---------------------------------------
+  Medicamento: Paracetamol
+  Nombre Comercial: Tylenol
+  Cantidad Reservada: 1 unidad(es)
+  Requiere Orden: No
+
+---------------------------------------
+DETALLES DE LA RESERVA:
+---------------------------------------
+  Prioridad: No
+  Estado: PENDIENTE
+
+=======================================
+  Por favor conserve este ticket para
+  retirar su medicamento en farmacia
+=======================================
+
+
+=======================================
+           TICKET DE RESERVA           
+             FARMA CENTER              
+=======================================
+
+Número de Ticket: #001
+Fecha y Hora: 2025/12/02 10:21:44
+
+---------------------------------------
+DATOS DEL CLIENTE:
+---------------------------------------
+  Nombre: lili
+  Cédula: 1234
+
+---------------------------------------
+DATOS DEL MEDICAMENTO:
+---------------------------------------
+  Medicamento: Amoxicilina
+  Nombre Comercial: Amoxil
+  Cantidad Reservada: 1 unidad(es)
+  Requiere Orden: Sí
+
+---------------------------------------
+DETALLES DE LA RESERVA:
+---------------------------------------
+  Prioridad: SÍ - Atención Prioritaria
+  Estado: PENDIENTE
+
+=======================================
+  Por favor conserve este ticket para
+  retirar su medicamento en farmacia
+=======================================
+
+

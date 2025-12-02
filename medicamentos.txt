@@ -1,0 +1,52 @@
+Paracetamol;Analgésico;Tylenol;Paracetamol;500 mg;Tabletas;Cada 8 horas;Para dolor o fiebre;No tomar con alcohol;false;45
+Ibuprofeno;Antiinflamatorio;Advil;Ibuprofeno;400 mg;Tabletas;Cada 12 horas;Para inflamación y dolor;Tomar con comida;false;30
+Amoxicilina;Antibiótico;Amoxil;Amoxicilina;500 mg;Cápsulas;Cada 8 horas;Infecciones bacterianas;Completar el tratamiento;true;20
+Cetirizina;Antihistamínico;Zyrtec;Cetirizina;10 mg;Tabletas;Una vez al día;Alergias;Puede causar sueño;false;40
+Omeprazol;Inhibidor de bomba de protones;Losec;Omeprazol;20 mg;Cápsulas;Una vez al día;Acidez o reflujo;Tomar antes de alimentos;false;35
+Metformina;Antidiabético;Glucophage;Metformina;500 mg;Tabletas;Cada 12 horas;Diabetes tipo 2;No combinar con alcohol;true;25
+Salbutamol;Broncodilatador;Ventolin;Salbutamol;100 mcg;Inhalador;Cada 4-6 horas;Asma;Evitar uso excesivo;false;20
+Clorfenamina;Antihistamínico;Clorfen;Clorfenamina;4 mg;Tabletas;Cada 8 horas;Alergias;Puede causar sueño;false;40
+Diclofenaco;Antiinflamatorio;Voltaren;Diclofenaco;50 mg;Tabletas;Cada 8 horas;Dolor e inflamación;Tomar con comida;false;30
+Aspirina;Antiinflamatorio;Bayer;Ácido acetilsalicílico;500 mg;Tabletas;Cada 8 horas;Dolor, fiebre;Evitar en niños con fiebre;false;45
+Amoxicilina+Clavulánico;Antibiótico;Augmentin;Amoxicilina+Clavulánico;875 mg;Cápsulas;Cada 12 horas;Infecciones graves;Completar tratamiento;true;20
+Lorazepam;Ansiolítico;Ativan;Lorazepam;1 mg;Tabletas;Cada 12 horas;Ansiedad;Evitar alcohol;true;15
+Furosemida;Diurético;Lasix;Furosemida;40 mg;Tabletas;Una vez al día;Edema y presión alta;Tomar por la mañana;true;25
+Levotiroxina;Hormona tiroidea;Eutirox;Levotiroxina;50 mcg;Tabletas;Una vez al día;Hipotiroidismo;Tomar en ayunas;true;30
+Azitromicina;Antibiótico;Zithromax;Azitromicina;500 mg;Tabletas;Cada 24 horas;Infecciones bacterianas;Completar tratamiento;true;20
+Metoclopramida;Antiemético;Primperan;Metoclopramida;10 mg;Tabletas;Cada 8 horas;Náuseas y vómito;Evitar uso prolongado;false;35
+Loratadina;Antihistamínico;Claritin;Loratadina;10 mg;Tabletas;Una vez al día;Alergias;Generalmente sin sueño;false;40
+Naproxeno;Antiinflamatorio;Aleve;Naproxeno;250 mg;Tabletas;Cada 12 horas;Dolor e inflamación;Tomar con comida;false;30
+Prednisona;Corticoide;Prednisona;Prednisona;20 mg;Tabletas;Una vez al día;Inflamación y alergias;Evitar interrupción brusca;true;25
+Cefalexina;Antibiótico;Keflex;Cefalexina;500 mg;Cápsulas;Cada 8 horas;Infecciones bacterianas;Completar tratamiento;true;20
+Clopidogrel;Anticoagulante;Plavix;Clopidogrel;75 mg;Tabletas;Una vez al día;Prevención trombosis;Evitar suspender sin indicación médica;true;30
+Ranitidina;Antiácido;Zantac;Ranitidina;150 mg;Tabletas;Cada 12 horas;Acidez y úlceras;Evitar alcohol;false;35
+Simvastatina;Hipolipemiante;Zocor;Simvastatina;20 mg;Tabletas;Una vez al día;Colesterol alto;Tomar en la noche;true;40
+Clonazepam;Ansiolítico;Rivotril;Clonazepam;0.5 mg;Tabletas;Cada 12 horas;Ansiedad y convulsiones;Evitar alcohol;true;15
+Insulina Glargina;Insulina;Lantus;Insulina Glargina;100 UI/ml;Inyección;Una vez al día;Diabetes tipo 1 y 2;No compartir jeringas;true;25
+Doxiciclina;Antibiótico;Vibramicina;Doxiciclina;100 mg;Tabletas;Cada 12 horas;Infecciones bacterianas;Evitar exposición solar;true;20
+Diclofenaco tópico;Antiinflamatorio;Voltaren Gel;Diclofenaco;1%;Crema;Aplicar cada 8 horas;Dolor localizado;No cubrir con vendaje oclusivo;false;30
+Mometasona;Corticoide;Nasonex;Mometasona;50 mcg;Spray nasal;Cada 24 horas;Alergias nasales;Evitar uso prolongado;false;25
+Atenolol;Betabloqueante;Tenormin;Atenolol;50 mg;Tabletas;Una vez al día;Hipertensión;Evitar suspender de golpe;true;30
+Alprazolam;Ansiolítico;Xanax;Alprazolam;0.5 mg;Tabletas;Cada 12 horas;Ansiedad;Evitar alcohol;true;15
+Levocetirizina;Antihistamínico;Xyzal;Levocetirizina;5 mg;Tabletas;Una vez al día;Alergias;Generalmente sin sueño;false;40
+Acetaminofén;Analgésico;Tempra, Dolex;Acetaminofén;500 mg;Tabletas;Cada 8 horas;Para dolor o fiebre;Evitar sobredosis;false;48
+Meloxicam;Antiinflamatorio;Movalis;Meloxicam;15 mg;Tabletas;Una vez al día;Dolor e inflamación;Tomar con comida;false;30
+Esomeprazol;Inhibidor de bomba de protones;Nexium;Esomeprazol;20 mg;Tabletas;Una vez al día;Reflujo y gastritis;Tomar antes de alimentos;false;35
+Tramadol;Analgésico opioide;Tramal;Tramadol;50 mg;Tabletas;Cada 8 horas;Dolor moderado a severo;Puede causar somnolencia;true;20
+Amlodipino;Antihipertensivo;Norvasc;Amlodipino;5 mg;Tabletas;Una vez al día;Hipertensión;Tomar a la misma hora;true;30
+Carbamazepina;Anticonvulsivo;Tegretol;Carbamazepina;200 mg;Tabletas;Cada 12 horas;Epilepsia y neuralgia;Evitar alcohol;true;25
+Enalapril;Antihipertensivo;Renitec;Enalapril;10 mg;Tabletas;Una vez al día;Presión alta;Puede causar tos seca;true;30
+Fluconazol;Antifúngico;Diflucan;Fluconazol;150 mg;Tabletas;Dosis única;Infecciones por hongos;Evitar alcohol;false;20
+Loperamida;Antidiarreico;Imodium;Loperamida;2 mg;Tabletas;Después de cada deposición;Diarrea aguda;No exceder dosis;false;25
+Metronidazol;Antibiótico;Flagyl;Metronidazol;500 mg;Tabletas;Cada 8 horas;Infecciones anaerobias;No consumir alcohol;true;20
+Pantoprazol;Inhibidor de bomba de protones;Pantozol;Pantoprazol;40 mg;Tabletas;Una vez al día;Gastritis y reflujo;Tomar en ayunas;false;35
+Sertralina;Antidepresivo;Zoloft;Sertralina;50 mg;Tabletas;Una vez al día;Depresión y ansiedad;Evitar alcohol;true;30
+Tamsulosina;Alfa bloqueante;Omnic;Tamsulosina;0.4 mg;Tabletas;Una vez al día;Hiperplasia prostática;Tomar después de comer;true;25
+Valproato de sodio;Anticonvulsivo;Depakene;Valproato de sodio;500 mg;Tabletas;Cada 12 horas;Epilepsia y trastorno bipolar;Evitar embarazo;true;20
+Warfarina;Anticoagulante;Coumadin;Warfarina;5 mg;Tabletas;Una vez al día;Prevención de trombos;Monitorear INR;true;15
+Zolpidem;Hipnótico;Stilnox;Zolpidem;10 mg;Tabletas;Antes de dormir;Insomnio;Evitar maquinaria pesada;true;15
+Bisoprolol;Betabloqueante;Concor;Bisoprolol;5 mg;Tabletas;Una vez al día;Hipertensión y arritmias;Evitar suspender de golpe;true;30
+Ketorolaco;Analgésico;Toradol;Ketorolaco;10 mg;Tabletas;Cada 6 horas;Dolor agudo;No usar más de 5 días;true;20
+Risperidona;Antipsicótico;Risperdal;Risperidona;2 mg;Tabletas;Una vez al día;Esquizofrenia y bipolaridad;Puede causar somnolencia;true;15
+Aciclovir;Antiviral;Zovirax;Aciclovir;400 mg;Tabletas;Cada 8 horas;Herpes simple;Tomar con agua;true;25
+Budesonida;Corticoide;Pulmicort;Budesonida;200 mcg;Inhalador;Cada 12 horas;Asma y EPOC;Enjuagar boca después;false;20

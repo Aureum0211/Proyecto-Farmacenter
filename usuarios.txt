@@ -1,0 +1,4 @@
+12345;josue gil;saludtotal;0987;PERSONA
+1234;lili;dfd;123;PERSONA
+123456;josue;farmaceutico;123;EMPLEADO
+456;mam;comeva;123;PERSONA
