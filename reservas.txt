@@ -1,3 +1,0 @@
-#001|12345|josue gil|Paracetamol|Tylenol|1|false|2025-12-02 00:44:22|ENTREGADO
-#001|12345|josue gil|Paracetamol|Tylenol|1|false|2025-12-02 00:46:50|PENDIENTE
-#001|1234|lili|Amoxicilina|Amoxil|1|true|2025-12-02 10:21:44|PENDIENTE
